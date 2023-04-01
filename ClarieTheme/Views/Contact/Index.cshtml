@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarie-theme</title>
+    <link rel="stylesheet" href="~/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container1">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+                <img src="~/assets/images/logo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="nav ">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
+                <a asp-controller="home" asp-action="index" class="border-top border-bottom py-2">Home</a>
+                <a asp-controller="product" asp-action="index" class="border-bottom py-2">Products</a>
+                <a asp-controller="catalog" asp-action="index" class="border-bottom py-2">Catalog</a>
+                <a asp-controller="contact" asp-action="index" class="border-bottom py-2">Contact</a>
+                <a asp-controller="about" asp-action="index" class="border-bottom py-2">About</a>
+                <a asp-controller="services" asp-action="index" class="border-bottom py-2">Services</a>
+                <a asp-controller="blog" asp-action="index" class="border-bottom py-2">Blog</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="account" asp-action="logout" class="border-bottom py-2">Logout</a>
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-area="manage" asp-controller="dashboard" asp-action="index" class="border-bottom py-2">Admin</a>
+                }
+            </div>
+
+            <span style="font-size:18px;cursor:pointer;padding-top: 6px;padding-right: 5px;" onclick="openNav()">
+                &#9776; Menu
+            </span>
+            <a asp-controller="search" asp-action="index"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a asp-controller="account" asp-action="login"><i class="fa-regular fa-user"></i></a>
+            <a asp-controller="basket" asp-action="index" class="position-relative">
+                <i class="fa-solid fa-box-archive"></i> <span class="cartt shop-cart">0</span>
+            </a>
+        </div>
+    </div>
+    <div class="main">
+        <h1>CONTACT</h1>
+        <h5><a asp-controller="home" asp-action="index">Home</a>/ Contact</h5>
+    </div>
+    <div class="container-lg">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98554966904!2d-122.50764092079149!3d37.75781499757391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1661056839202!5m2!1sen!2str"
+                    width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div class="contact">
+                <div class="box">
+                    <div class="icon-image">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h5>Phone</h5>
+                        <p> <b>Toll-Free: </b> 0000 - 123 - 456789 <br><b>Fax: </b> 0000 - 123 - 456789</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon-image">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+
+                    <div class="icon-content">
+                        <h5>Email</h5>
+                        <p class="email-section">
+                            <a title="" href="">info@example.com</a><br><a title="" href="">support@example.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon-image">
+                        <i class="fa fa-location-arrow"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h5>Address</h5>
+                        <p> No: 58 A, East Madison Street,<br> Baltimore, MD, USA 4508<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form">
+        <h4> Contact Form </h4>
+
+        <div id="input">
+            <input type="text" placeholder="Name">
+        </div>
+        <div id="input">
+            <input type="email" placeholder="Email">
+        </div>
+        <div id="input">
+            <input type="number" placeholder="Phone">
+        </div>
+        <div id="input">
+            <textarea name="Contact" id="contactform" cols="30" rows="10" placeholder="Message"></textarea>
+        </div>
+        <div id="btn">
+            <button type="submit">Send</button>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row signup align-items-center justify-content-between">
+                <div class="col-lg-4">
+                    <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/footer-logo-new-1_x70@2x.png?v=1639659835" class="w-50" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <div id="signup">
+                        <h2>Don’t be shy - <a href="">Signup</a>and <a href="">stay updated </a>for future</h2>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="social">
+                        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="footer row">
+                <div id="help" class="col-lg-3">
+                    <h5>Help</h5>
+                    <a href="" class="px-0">Search</a>
+                    <a href="" class="px-0">Career</a>
+                    <a href="" class="px-0">Privacy policy</a>
+                    <a href="" class="px-0">Terms & conditions</a>
+                </div>
+                <div id="information" class="col-lg-3">
+                    <h5>Information</h5>
+                    <a href="" class="px-0">Support</a>
+                    <a href="" class="px-0">Help</a>
+                    <a href="" class="px-0">Shipping Details</a>
+                    <a href="" class="px-0">Orders</a>
+                </div>
+                <div id="contact" class="col-lg-3">
+                    <h5>Contact us</h5>
+                    <h6>Address</h6>
+                    <p>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</p>
+                    <h6>Phone</h6>
+                    <p>0000 - 123 - 456789</p>
+                </div>
+                <div id="footerlogo" class="col-lg-2">
+                    <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/home-icon-1.png" class="w-75" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/js/jquery.js"></script>
+    <script src="~/assets/js/contact.js"></script>
+</body>
+
+</html>
+

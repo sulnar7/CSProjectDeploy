@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarie-theme</title>
+    <link rel="stylesheet" href="~/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/css/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container1">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6">
+                <img src="~/assets/images/logo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="nav ">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
+                <a asp-controller="home" asp-action="index" class="border-top border-bottom py-2">Home</a>
+                <a asp-controller="product" asp-action="index" class="border-bottom py-2">Products</a>
+                <a asp-controller="catalog" asp-action="index" class="border-bottom py-2">Catalog</a>
+                <a asp-controller="contact" asp-action="index" class="border-bottom py-2">Contact</a>
+                <a asp-controller="about" asp-action="index" class="border-bottom py-2">About</a>
+                <a asp-controller="services" asp-action="index" class="border-bottom py-2">Services</a>
+                <a asp-controller="blog" asp-action="index" class="border-bottom py-2">Blog</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="account" asp-action="logout" class="border-bottom py-2">Logout</a>
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-area="manage" asp-controller="dashboard" asp-action="index" class="border-bottom py-2">Admin</a>
+                }
+            </div>
+
+            <span style="font-size:18px;cursor:pointer;padding-top: 6px;padding-right: 5px;" onclick="openNav()">
+                &#9776;
+                Menu
+            </span>
+
+            <a asp-controller="search" asp-action="index"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a asp-controller="account" asp-action="login"><i class="fa-regular fa-user"></i></a>
+            <a asp-controller="basket" asp-action="index" class="position-relative">
+                <i class="fa-solid fa-box-archive"></i> <span class="cartt shop-cart">0</span>
+            </a>
+        </div>
+    </div>
+    <div class="main">
+        <h1>SERVICES</h1>
+        <h5><a asp-controller="home" asp-action="index">Home</a>/ Services</h5>
+    </div>
+    <div class="products">
+        <div id=plogo>
+            <img src="~/assets/images/productlogo.jpg" alt="logo">
+            <div id="texts">
+                <h4>Made with care</h4>
+            </div>
+        </div>
+    </div>
+    <div class="second">
+        <div id="image">
+            <img src="~/assets/images/img37.jpg" alt="">
+        </div>
+        <div id="images">
+            <img src="~/assets/images/img38.jpg" alt="">
+            <img src="~/assets/images/img39.jpg" alt="">
+            <img src="~/assets/images/img40.jpg" alt="">
+        </div>
+        <div id="text">
+            <h5>Antique pots</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <h5>Handmade ceramics</h5>
+            <p>
+                Tellus urem rhiluses hidlues ponsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </p>
+            <h5>Embrace beauty</h5>
+            <p>Marques rhilues fidliues sonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <a asp-controller="product" asp-action="index">Read More</a>
+        </div>
+    </div>
+    <div class="third">
+        <div id="logo">
+            <img src="~/assets/images/img2.jpg" alt="">
+        </div>
+        <div id="title">
+            “ Say A Piece Of
+            <a asp-controller="catalog" asp-action="index">Pottery Is Broken, And It’s Fixed,</a>
+            And They Use Gold In The Adhesive And In The Sealant. It Becomes
+            <a href="">More Precious</a>
+            Than It Was Before It Was Broken In The First Place.”
+        </div>
+        <div id="flog">
+            <img src="~/assets/images/img3.jpg" alt="">
+        </div>
+    </div>
+    <div class="fourth">
+        <div id="left">
+            <img src="~/assets/images/productlogo.jpg" alt="">
+            <h4>Hand thrown pottery</h4>
+            <p>
+                Hidlues ferum isuem marwues cnsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <a href="products.html">Shop More</a>
+            <div class="btm">
+                <a asp-controller="product" asp-action="index">Shop more</a>
+            </div>
+        </div>
+        <div id="right">
+            <img src="~/assets/images/img42.jpg" alt="">
+        </div>
+    </div>
+    <div class="center">
+        <img src="~/assets/images/productlogo.jpg" alt="">
+        <h4>Hold everything with feel</h4>
+    </div>
+    <div class="fifth">
+        <div id="trendy">
+            <h4>Trendy designs</h4>
+            <p>
+                Tristique risus nec feugiat in fermentum. Molestie at elementum eu facilisis. Morbi tempus iaculis
+                marques ispum tellus eid dolor
+            </p>
+            <h4>Unique look</h4>
+            <p>
+                Quis blandit turpis cursus in hac habitasse platea dictumst quisque. At elementum eu facilisis sed odio
+                morbi quis. Sapien et lobe
+            </p>
+        </div>
+        <div id="icon">
+            <i class="fa-solid fa-cart-plus"></i>
+            <i class="fa-solid fa-tags"></i>
+        </div>
+        <div id="iconn">
+            <i class="fa-solid fa-book"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <div id="new">
+            <h4>New pottery</h4>
+            <p>
+                Malesuada pellentesque elit eget gravida cum sociis natoque. Enim praesent elementum facilisis leo vel
+                fringilla. Nunc congue nisi
+            </p>
+            <h4>Turning clay</h4>
+            <p>
+                Phiese dolor amet, consectetur adipis cing elit. Nullam id arcu tortor. Sed eget sit ame egestas, cursus
+                ipsum ridlus tortore
+            </p>
+        </div>
+    </div>
+    <div class="studio">
+        <a asp-controller="services" asp-action="index"><img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/service-logo-01_200x200.png?v=1637921675" alt=""></a>
+        <a asp-controller="services" asp-action="index"><img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/service-logo-02_200x200.png?v=1637921690" alt=""></a>
+        <a asp-controller="services" asp-action="index"> <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/service-logo-03_200x200.png?v=1637921690" alt=""></a>
+        <a asp-controller="services" asp-action="index"><img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/service-logo-04_200x200.png?v=1637921690" alt=""></a>
+        <a asp-controller="services" asp-action="index"> <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/service-logo-05_200x200.png?v=1637921690" alt=""></a>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row signup align-items-center justify-content-between">
+                <div class="col-lg-4">
+                    <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/footer-logo-new-1_x70@2x.png?v=1639659835" class="w-50" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <div id="signup">
+                        <h2>Don’t be shy - <a href="">Signup</a>and <a href="">stay updated </a>for future</h2>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="social">
+                        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="footer row">
+                <div id="help" class="col-lg-3">
+                    <h5>Help</h5>
+                    <a href="" class="px-0">Search</a>
+                    <a href="" class="px-0">Career</a>
+                    <a href="" class="px-0">Privacy policy</a>
+                    <a href="" class="px-0">Terms & conditions</a>
+                </div>
+                <div id="information" class="col-lg-3">
+                    <h5>Information</h5>
+                    <a href="" class="px-0">Support</a>
+                    <a href="" class="px-0">Help</a>
+                    <a href="" class="px-0">Shipping Details</a>
+                    <a href="" class="px-0">Orders</a>
+                </div>
+                <div id="contact" class="col-lg-3">
+                    <h5>Contact us</h5>
+                    <h6>Address</h6>
+                    <p>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</p>
+                    <h6>Phone</h6>
+                    <p>0000 - 123 - 456789</p>
+                </div>
+                <div id="footerlogo" class="col-lg-2">
+                    <img src="https://cdn.shopify.com/s/files/1/0569/6090/9499/files/home-icon-1.png" class="w-75" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/js/jquery.js"></script>
+    <script src="~/assets/js/services.js"></script>
+</body>
+</html>

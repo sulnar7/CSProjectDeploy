@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Blog Table</h4>
+                    <a asp-area="manage" asp-controller="blog" asp-action="create" class=" btn btn-outline-success">Create</a>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0" style="width:15%;">Image</th>
+                                    <th class="border-top-0" style="width:25%;">Title</th>
+                                    <th class="border-top-0" style="width:50%">Description</th>
+                                    <th class="border-top-0" style="width:10%">Buttons</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var blog in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/assets/images/blog/@blog.Image" style="width: 85%;" alt="" />
+                                        </td>
+                                        <td>@blog.Title</td>
+                                        <td>@blog.Description</td>
+                                        <td><a asp-area="manage" asp-controller="blog" asp-action="delete" asp-route-id="@blog.Id" class="btn btn-danger text-white  ">Delete</a></td>
+                                        <td><a asp-area="manage" asp-controller="blog" asp-action="update" asp-route-id="@blog.Id" class="btn btn-warning ">Update</a></td>
+                                        <td><a asp-area="manage" asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id" class="btn btn-primary ">Detail</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->

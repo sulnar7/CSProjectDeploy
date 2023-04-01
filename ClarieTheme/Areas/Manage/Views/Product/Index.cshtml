@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Product Table</h4>
+                    <a asp-area="manage" asp-controller="product" asp-action="create" class=" btn btn-outline-success">Create</a>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0" style="width:25%;">Image</th>
+                                    <th class="border-top-0" style="width:35%;">Title</th>
+                                    <th class="border-top-0" style="width:15%">Price</th>
+                                    <th class="border-top-0" style="width:15%">Discount Price</th>
+                                    <th class="border-top-0" style="width:10%">Buttons</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/assets/images/product/@product.Image" style="width: 85%;" alt="" />
+                                        </td>
+                                        <td>@product.Title</td>
+                                        <td>@product.OldPrice</td>
+                                        <td>@product.Price</td>
+                                        <td><a asp-area="manage" asp-controller="product" asp-action="delete" asp-route-id="@product.Id" class="btn btn-danger text-white  ">Delete</a></td>
+                                        <td><a asp-area="manage" asp-controller="product" asp-action="update" asp-route-id="@product.Id" class="btn btn-warning ">Update</a></td>
+                                        <td><a asp-area="manage" asp-controller="product" asp-action="detail" asp-route-id="@product.Id" class="btn btn-primary ">Detail</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->

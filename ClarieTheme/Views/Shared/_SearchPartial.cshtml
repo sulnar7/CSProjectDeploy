@@ -1,0 +1,11 @@
+﻿@model List<Product>
+@foreach (var item in Model)
+{
+<li>
+    <a href="/product/detail/@item.Id">
+        <span class="thumbnail">
+            <img src="~/assets/images/product/@item.Image">
+        </span>
+        <span class="title">@item.Title</span>
+    </a>
+</li>}
